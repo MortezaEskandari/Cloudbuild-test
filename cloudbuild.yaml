@@ -1,19 +1,19 @@
 steps:
   # Step 1: Run the Hello World script
-  -name: python
-  entrypoint: python
-  args: ["app.py"]
+  - name: python
+    entrypoint: python
+    args: ["app.py"]
 
   # Step 2: Build the Docker image
-  -name: gcr.io/cloud-builders/docker
-  args:
-    -"build"
-    -"-t"
-    -"us-east4-docker.pkg.dev/$PROJECT_ID/hello-world-repo/hello-world-app:latest"
-    -"."
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - "build"
+      - "-t"
+      - "us-east4-docker.pkg.dev/vita22-test-project/hello-world-repo/hello-world-app:latest"
+      - "."
 
   # Step 3: Push the image to Artifact Registry
-  -name: gcr.io/cloud-builders/docker
-  args:
-    -"push"
-    -"us-east4-docker.pkg.dev/$PROJECT_ID/hello-world-repo/hello-world-app:latest"
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - "push"
+      - "us-east4-docker.pkg.dev/vita22-test-project/hello-world-repo/hello-world-app:latest"
