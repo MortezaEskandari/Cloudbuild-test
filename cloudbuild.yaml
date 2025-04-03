@@ -17,3 +17,6 @@ steps:
     args:
       - "push"
       - "us-east4-docker.pkg.dev/vita22-test-project/hello-world-repo/hello-world-app:latest"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
