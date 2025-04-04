@@ -17,6 +17,10 @@ steps:
     args:
       - "push"
       - "us-east4-docker.pkg.dev/vita22-test-project/hello-world-repo/hello-world-app:latest"
+  
+  - name: alpine
+    entrypoint: sh
+    args: ["-c", "echo Cloud Build Logging is working"]
 
 options:
   logging: CLOUD_LOGGING_ONLY
